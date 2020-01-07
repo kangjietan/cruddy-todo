@@ -12,7 +12,7 @@ exports.create = (text, callback) => {
     var id = data;
     items[id] = text;
     var fileID = path.join(exports.dataDir, id);
-    fs.writeFile(fileID, text, () => {
+    fs.writeFile(`${fileID}.txt`, text, () => {
       callback(null, { id, text });
     });
   });
