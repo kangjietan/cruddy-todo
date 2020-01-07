@@ -1,12 +1,15 @@
 
 // Todo Model //////////////////////////////////////////////////////////////////
 
+// - import datastore
 const Todo = require('./datastore');
 
 // Configure Express ///////////////////////////////////////////////////////////
 
+// - import bodyParser to handle HTTP post request
 const bodyParser = require('body-parser');
 const express = require('express');
+// - morgan supports a handful of pre-defined logged formats with well-known names, structures, combined, common, dev, short, tiny
 const morgan = require('morgan');
 const path = require('path');
 
