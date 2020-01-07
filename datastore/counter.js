@@ -44,7 +44,6 @@ exports.getNextUniqueId = (callback) => {
   // Increase counter by 1
   // Return counter in string format with leading zeros
 
-  // readCounter ( (err, fileData)=>{ ******** } )
   readCounter( (err, fileData) => {
     counter = fileData;
     counter++;
@@ -52,10 +51,6 @@ exports.getNextUniqueId = (callback) => {
       callback(err, fileData);
     });
   });
-
-  // counter = zeroPaddedNumber(counter);
-
-  console.log(counter); // Ex: '00001'
 };
 
 
