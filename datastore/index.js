@@ -19,11 +19,21 @@ exports.create = (text, callback) => {
 };
 
 exports.readAll = (callback) => {
-  // var data = _.map(items, (text, id) => {
-  //   return { id, text };
-  // });
-  console.log(dir.read());
-  callback(null, data);
+  var files = [];
+  fs.readdir(exports.dataDir, (err, data) => {
+    if (err) {
+      console.log('Error');
+    } else {
+      data.forEach( (file) => {
+        let rObj = {};
+        rObj.id = file.slice(0, 5);
+        rObj.text = file.slice(0, 5);
+        files.push(rObj);
+      });
+    }
+    callback(null, files);
+  });
+  return files;
 };
 
 exports.readOne = (id, callback) => {
